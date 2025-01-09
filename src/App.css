@@ -1,0 +1,15 @@
+import { useState } from 'react';
+import { Header } from './components/Header';
+import { Navigation } from './components/Navigation';
+import { HomePage } from './pages/HomePage';
+import { BookingPage } from './pages/BookingPage';
+
+const menuItems = [
+  { id: 1, text: 'หน้าแรก', primary: true },
+  { id: 2, text: 'เกี่ยวกับคลินิก' },
+  { id: 3, text: 'บริการของเรา' },
+  { id: 4, text: 'บทความ' },
+  { id: 5, text: 'ข้อมูลส่วนตัว/การจอง' },
+];
+
+function App() {
