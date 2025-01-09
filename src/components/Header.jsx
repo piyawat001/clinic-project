@@ -1,6 +1,7 @@
-import { Menu, Facebook, MessageCircle, X } from "lucide-react";
+// src/components/Header.jsx
+import { Menu, Facebook, MessageCircle, X } from 'lucide-react';
 
-export const Header = ({ showMenu, setShowMenu }) => (
+const Header = ({ showMenu, setShowMenu }) => (
   <div className="bg-white p-4 border-b">
     <div className="flex justify-between items-center">
       <div className="flex gap-2">
@@ -27,3 +28,5 @@ export const Header = ({ showMenu, setShowMenu }) => (
     </div>
   </div>
 );
+
+export default Header;

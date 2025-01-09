@@ -1,4 +1,5 @@
-export const Navigation = ({ menuItems, setShowMenu }) => (
+// src/components/Navigation.jsx
+const Navigation = ({ menuItems, setShowMenu }) => (
   <div className="p-4 flex flex-col gap-3">
     {menuItems.map((item) => (
       <button
@@ -15,3 +16,5 @@ export const Navigation = ({ menuItems, setShowMenu }) => (
     ))}
   </div>
 );
+
+export default Navigation;

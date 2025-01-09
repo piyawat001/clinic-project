@@ -1,7 +1,8 @@
-// components/TimeSlots.jsx
+// src/components/TimeSlots.jsx
 import { useState } from 'react';
+import BookingSteps from './BookingSteps';
 
-export const TimeSlots = () => {
+const TimeSlots = ({ onBack }) => {
   const [selectedTime, setSelectedTime] = useState(null);
   
   const timeSlots = [
@@ -23,24 +24,18 @@ export const TimeSlots = () => {
         ทำการจองออนไลน์
       </div>
       
-      <div className="flex justify-between gap-2 mb-4">
-        {['คลินิก', 'วันเวลา', 'เสร็จสิ้น'].map((step, index) => (
-          <div
-            key={step}
-            className={`flex-1 py-2 px-3 text-center ${
-              index + 1 === 2
-                ? 'bg-blue-900 text-white'
-                : 'bg-gray-200 text-gray-700'
-            } rounded-md text-sm`}
-          >
-            {index + 1}.{step}
-          </div>
-        ))}
-      </div>
+      <BookingSteps currentStep={2} />
 
       <div className="bg-blue-900 text-white p-3 text-center rounded-md mb-4">
-        เลือก
+        เลือกเวลา
       </div>
+
+      <button 
+        onClick={onBack}
+        className="w-full mb-4 p-2 border border-blue-900 text-blue-900 rounded-md"
+      >
+        ย้อนกลับไปเลือกวัน
+      </button>
 
       <div className="grid grid-cols-2 gap-4 mb-6">
         {timeSlots.map((slot) => (
@@ -72,33 +67,4 @@ export const TimeSlots = () => {
   );
 };
 
-// pages/BookingPage.jsx
-import { useState } from 'react';
-import { BookingSteps } from '../components/BookingSteps';
-import { Calendar } from '../components/Calendar';
-import { TimeSlots } from '../components/TimeSlots';
-
-export const BookingPage = ({ currentStep }) => {
-  const [selectedDate, setSelectedDate] = useState(null);
-
-  return (
-    <div className="p-4">
-      {currentStep === 2 && !selectedDate && (
-        <>
-          <div className="bg-emerald-400 text-white p-3 text-center rounded-md mb-4">
-            ทำการจองออนไลน์
-          </div>
-          <BookingSteps currentStep={currentStep} />
-          <div className="bg-blue-900 text-white p-3 text-center rounded-md mb-4">
-            2.วันเวลา
-          </div>
-          <Calendar onDateSelect={setSelectedDate} />
-        </>
-      )}
-      
-      {currentStep === 2 && selectedDate && (
-        <TimeSlots />
-      )}
-    </div>
-  );
-};
+export default TimeSlots;

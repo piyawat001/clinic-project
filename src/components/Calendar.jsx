@@ -1,10 +1,8 @@
-// components/Calendar.jsx
-export const Calendar = ({ onDateSelect }) => {
-  // รับ prop onDateSelect
+// src/components/Calendar.jsx
+const Calendar = ({ onDateSelect }) => {
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
   const weekDays = ["S", "M", "T", "W", "T", "F", "S"];
 
-  // เพิ่ม click handler
   const handleDateClick = (day) => {
     const isHoliday = [5, 12, 19, 26, 4, 11, 18, 25].includes(day);
     if (!isHoliday) {
@@ -37,7 +35,7 @@ export const Calendar = ({ onDateSelect }) => {
             return (
               <div
                 key={day}
-                onClick={() => !isHoliday && handleDateClick(day)} // เพิ่ม onClick event
+                onClick={() => handleDateClick(day)}
                 className={`p-2 ${
                   isHoliday
                     ? "text-red-500 cursor-not-allowed"
@@ -65,3 +63,5 @@ export const Calendar = ({ onDateSelect }) => {
     </div>
   );
 };
+
+export default Calendar;

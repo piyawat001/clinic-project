@@ -1,4 +1,5 @@
-export const HomePage = ({ setCurrentPage, setCurrentStep }) => (
+// src/pages/HomePage.jsx
+const HomePage = ({ setCurrentPage, setCurrentStep }) => (
   <div className="p-4">
     <button
       onClick={() => {
@@ -15,3 +16,5 @@ export const HomePage = ({ setCurrentPage, setCurrentStep }) => (
     </div>
   </div>
 );
+
+export default HomePage;
