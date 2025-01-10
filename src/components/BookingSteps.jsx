@@ -1,3 +1,4 @@
+//my-clinic-app/src/components/BookingSteps.jsx
 import PropTypes from 'prop-types';
 
 const BookingSteps = ({ currentStep }) => (

@@ -1,11 +1,12 @@
+// src/components/Navigation.jsx
 import PropTypes from 'prop-types';
 
-const Navigation = ({ menuItems, setShowMenu }) => (
+const Navigation = ({ menuItems }) => (
   <div className="p-4 flex flex-col gap-3">
     {menuItems.map((item) => (
       <button
         key={item.id}
-        onClick={() => setShowMenu(false)}
+        onClick={item.onClick}
         className={`w-full py-3 px-4 rounded-md text-center ${
           item.primary
             ? 'bg-emerald-400 text-white hover:bg-emerald-500'
@@ -24,9 +25,9 @@ Navigation.propTypes = {
       id: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
       primary: PropTypes.bool.isRequired,
+      onClick: PropTypes.func.isRequired,
     })
   ).isRequired,
-  setShowMenu: PropTypes.func.isRequired,
 };
 
 export default Navigation;

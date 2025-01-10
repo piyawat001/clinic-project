@@ -1,3 +1,4 @@
+//my-clinic-app/src/components/Header.jsx
 import PropTypes from 'prop-types';
 import { Menu, Facebook, MessageCircle, X } from 'lucide-react';
 

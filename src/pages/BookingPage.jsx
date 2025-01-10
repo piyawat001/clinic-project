@@ -3,6 +3,7 @@ import { useState } from 'react';
 import BookingSteps from '../components/BookingSteps';
 import Calendar from '../components/Calendar';
 import TimeSlots from '../components/TimeSlots';
+import PropTypes from 'prop-types';
 
 const BookingPage = ({ currentStep }) => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -28,5 +29,7 @@ const BookingPage = ({ currentStep }) => {
     </div>
   );
 };
-
+BookingPage.propTypes = {
+  currentStep: PropTypes.number.isRequired
+};
 export default BookingPage;

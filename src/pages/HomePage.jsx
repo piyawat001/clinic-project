@@ -1,4 +1,5 @@
 // src/pages/HomePage.jsx
+import PropTypes from 'prop-types';
 const HomePage = ({ setCurrentPage, setCurrentStep }) => (
   <div className="p-4">
     <button
@@ -16,5 +17,8 @@ const HomePage = ({ setCurrentPage, setCurrentStep }) => (
     </div>
   </div>
 );
-
+HomePage.propTypes = {
+  setCurrentPage: PropTypes.func.isRequired,
+  setCurrentStep: PropTypes.func.isRequired
+};
 export default HomePage;
