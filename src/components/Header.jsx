@@ -1,4 +1,4 @@
-// src/components/Header.jsx
+import PropTypes from 'prop-types';
 import { Menu, Facebook, MessageCircle, X } from 'lucide-react';
 
 const Header = ({ showMenu, setShowMenu }) => (
@@ -28,5 +28,10 @@ const Header = ({ showMenu, setShowMenu }) => (
     </div>
   </div>
 );
+
+Header.propTypes = {
+  showMenu: PropTypes.bool.isRequired,
+  setShowMenu: PropTypes.func.isRequired,
+};
 
 export default Header;

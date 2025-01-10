@@ -1,10 +1,10 @@
-// src/components/TimeSlots.jsx
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import BookingSteps from './BookingSteps';
 
 const TimeSlots = ({ onBack }) => {
   const [selectedTime, setSelectedTime] = useState(null);
-  
+
   const timeSlots = [
     { start: '16:00', end: '16:30' },
     { start: '16:30', end: '17:00' },
@@ -23,14 +23,14 @@ const TimeSlots = ({ onBack }) => {
       <div className="bg-emerald-400 text-white p-3 text-center rounded-md mb-4">
         ทำการจองออนไลน์
       </div>
-      
+
       <BookingSteps currentStep={2} />
 
       <div className="bg-blue-900 text-white p-3 text-center rounded-md mb-4">
         เลือกเวลา
       </div>
 
-      <button 
+      <button
         onClick={onBack}
         className="w-full mb-4 p-2 border border-blue-900 text-blue-900 rounded-md"
       >
@@ -53,10 +53,10 @@ const TimeSlots = ({ onBack }) => {
         ))}
       </div>
 
-      <button 
+      <button
         className={`w-full p-3 rounded-md text-white text-center ${
-          selectedTime 
-            ? 'bg-blue-900 hover:bg-blue-800' 
+          selectedTime
+            ? 'bg-blue-900 hover:bg-blue-800'
             : 'bg-gray-400 cursor-not-allowed'
         }`}
         disabled={!selectedTime}
@@ -65,6 +65,10 @@ const TimeSlots = ({ onBack }) => {
       </button>
     </div>
   );
+};
+
+TimeSlots.propTypes = {
+  onBack: PropTypes.func.isRequired,
 };
 
 export default TimeSlots;

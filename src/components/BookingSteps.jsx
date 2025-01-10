@@ -1,4 +1,5 @@
-// src/components/BookingSteps.jsx
+import PropTypes from 'prop-types';
+
 const BookingSteps = ({ currentStep }) => (
   <div className="flex justify-between gap-2 mb-4">
     {['คลินิก', 'วันเวลา', 'เสร็จสิ้น'].map((step, index) => (
@@ -15,5 +16,9 @@ const BookingSteps = ({ currentStep }) => (
     ))}
   </div>
 );
+
+BookingSteps.propTypes = {
+  currentStep: PropTypes.number.isRequired,
+};
 
 export default BookingSteps;

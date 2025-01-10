@@ -1,4 +1,6 @@
 // src/components/Calendar.jsx
+import PropTypes from 'prop-types';
+
 const Calendar = ({ onDateSelect }) => {
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
   const weekDays = ["S", "M", "T", "W", "T", "F", "S"];
@@ -62,6 +64,10 @@ const Calendar = ({ onDateSelect }) => {
       </div>
     </div>
   );
+};
+
+Calendar.propTypes = {
+  onDateSelect: PropTypes.func.isRequired,
 };
 
 export default Calendar;
