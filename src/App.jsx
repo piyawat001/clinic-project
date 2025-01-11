@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import BookingPage from "./pages/BookingPage";
 import ProfilePage from "./components/ProfilePage";
 import AboutPage from "./components/AboutPage";
+import ArticlePage from "./components/ArticlePage";
 
 const App = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -44,6 +45,7 @@ const App = () => {
       text: "บทความ",
       primary: false,
       onClick: () => {
+        setCurrentPage("article");
         setShowMenu(false);
       },
     },
@@ -79,6 +81,8 @@ const App = () => {
         <ProfilePage onBack={handleBackToHome} />
       ) : currentPage === "about" ? ( // เพิ่มเงื่อนไขนี้
         <AboutPage />
+      ) : currentPage === "article" ? ( // เพิ่มเงื่อนไขนี้
+        <ArticlePage />
       ) : null}
     </div>
   );
